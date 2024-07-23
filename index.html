@@ -126,16 +126,31 @@
     </header>
 
     <!--End of Header Section-->
-<!--Filter and sort-->
 
-<!--End of Filter and Sort-->
+    <!--Filter and sort-->
 
+    <div class="flex justify-between mb-4">
+      <select
+        class="p-2 border rounded"
+      >
+        <option value="">All Categories</option>
+      </select>
+
+      <select
+        class="p-2 border rounded"
+      >
+        <option value="default">Default</option>
+        <option value="asc">Price: Low to High</option>
+        <option value="desc">Price: High to Low</option>
+      </select>
+    </div>
+
+    <!--End of Filter and Sort-->
 
     <!--Product List-->
 
-<!--Function initialisation-->
+    <!--Function initialisation-->
     <div x-data="productList()" x-init="fetchProducts()">
-
       <!--What shows when Loading-->
       <template x-if="loading && !error">
         <div class="grid justify-center">
@@ -200,16 +215,17 @@
             class="lg:max-h-[130rem] max-w-xl mx-auto grid gap-4 grid-cols-1 lg:grid-cols-4 md:grid-cols-2 items-center lg:max-w-none my-4"
           >
             <template x-for="product in products" :key="product.id">
-
               <!--Specific cards-->
-              <div @click="openModal(product.id)" class="flex flex-col max-h-[130rem] cursor-pointer max-w-80 hover:-translate-y-1 hover:scale-105 duration-300 bg-white border border-slate-200 shadow shadow-slate-950/5 rounded-2xl overflow-hidden">
+              <div
+                @click="openModal(product.id)"
+                class="flex flex-col max-h-[130rem] cursor-pointer max-w-80 hover:-translate-y-1 hover:scale-105 duration-300 bg-white border border-slate-200 shadow shadow-slate-950/5 rounded-2xl overflow-hidden"
+              >
                 <img
                   class="object-contain h-48 mt-3"
                   :src="product.image"
                   alt="Product Image"
                 />
                 <div class="flex-1 flex flex-col p-6">
-
                   <!--Reviews and price-->
                   <div class="flex-1">
                     <header class="mb-2 flex-2">
