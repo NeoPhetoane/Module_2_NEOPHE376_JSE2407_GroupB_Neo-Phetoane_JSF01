@@ -19,120 +19,124 @@
     <script type="module" src="src/main.js"></script>
 
     <!--Header -->
-    <header class="sticky z-50 top-0">
-      <nav class="bg-gray-500 border-gray-200">
-        <div
-          class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
-          x-data="{ open: true }"
-        >
-          <a href="/">
-            <button class="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src="/online-shop.png" class="h-8" alt="Flowbite Logo" />
-              <span
-                class="self-center text-2xl font-semibold whitespace-nowrap text-white"
-              >
-                SwiftCart
-              </span>
-            </button>
-          </a>
-          <button
-            @click="open = !open"
-            type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-            aria-controls="navbar-default"
-            aria-expanded="false"
-          >
-            <span class="sr-only">Open main menu</span>
-            <svg
-              class="w-5 h-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
+    <header class="sticky z-50 top-0 bg-gray-500 border-gray-200">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+        x-data="{ open: true }"
+      >
+        <!--Logo-->
+        <a href="/">
+          <button class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/online-shop.png" class="h-8" alt="Flowbite Logo" />
+            <span
+              class="self-center text-2xl font-semibold whitespace-nowrap text-white"
             >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
+              SwiftCart
+            </span>
           </button>
-
-          <div
-            x-show="open"
-            :class="{'hidden': !open, 'block': open}"
-            class="w-full md:block md:w-auto"
-            id="navbar-dropdown"
+        </a>
+        <!--Hamburger-->
+        <button
+          @click="open = !open"
+          type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          aria-controls="navbar-default"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
           >
-            <ul
-              class="flex flex-col top-10 font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-500 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
-            >
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-                >
-                  Wishlist
-                </a>
-              </li>
-              <a href="#">
-                <li class="hidden lg:block md:block relative">
-                  <div class="t-0 absolute left-3 -top-4">
-                    <p
-                      class="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white"
-                    >
-                      2
-                    </p>
-                  </div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    class="file: h-6 w-6 stroke-white cursor-pointer"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                    />
-                  </svg>
-                </li>
-              </a>
-              <li>
-                <a
-                  href="#"
-                  class="lg:hidden md:hidden py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
-                >
-                  Cart
-                </a>
-              </li>
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
 
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+        <div
+          x-show="open"
+          :class="{'hidden': !open, 'block': open}"
+          class="w-full md:block md:w-auto"
+          id="navbar-dropdown"
+        >
+          <ul
+            class="flex flex-col top-10 font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-500 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+              >
+                Wishlist
+              </a>
+            </li>
+            <a href="#">
+              <li class="hidden lg:block md:block relative">
+                <div class="t-0 absolute left-3 -top-4">
+                  <p
+                    class="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white"
+                  >
+                    2
+                  </p>
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  class="file: h-6 w-6 stroke-white cursor-pointer"
                 >
-                  Login
-                </a>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
+                  />
+                </svg>
               </li>
-            </ul>
-          </div>
+            </a>
+            <li>
+              <a
+                href="#"
+                class="lg:hidden md:hidden py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+              >
+                Cart
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0"
+              >
+                Login
+              </a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
     </header>
 
-<!--End of Header Section-->
-    
-    
+    <!--End of Header Section-->
+<!--Filter and sort-->
+
+<!--End of Filter and Sort-->
+
 
     <!--Product List-->
 
+<!--Function initialisation-->
     <div x-data="productList()" x-init="fetchProducts()">
-      <!--Loading state-->
+
+      <!--What shows when Loading-->
       <template x-if="loading && !error">
         <div class="grid justify-center">
           <div
@@ -175,7 +179,7 @@
           </div>
         </div>
       </template>
-
+      <!--Error styling-->
       <template x-if="error">
         <div class="grid justify-center">
           <div
@@ -196,16 +200,17 @@
             class="lg:max-h-[130rem] max-w-xl mx-auto grid gap-4 grid-cols-1 lg:grid-cols-4 md:grid-cols-2 items-center lg:max-w-none my-4"
           >
             <template x-for="product in products" :key="product.id">
-              <div
-                @click="window.location.href = `/products/${product.id}`"
-                class="flex flex-col max-h-[130rem] cursor-pointer max-w-80 hover:-translate-y-1 hover:scale-105 duration-300 bg-white border border-slate-200 shadow shadow-slate-950/5 rounded-2xl overflow-hidden"
-              >
+
+              <!--Specific cards-->
+              <div @click="openModal(product.id)" class="flex flex-col max-h-[130rem] cursor-pointer max-w-80 hover:-translate-y-1 hover:scale-105 duration-300 bg-white border border-slate-200 shadow shadow-slate-950/5 rounded-2xl overflow-hidden">
                 <img
                   class="object-contain h-48 mt-3"
                   :src="product.image"
                   alt="Product Image"
                 />
                 <div class="flex-1 flex flex-col p-6">
+
+                  <!--Reviews and price-->
                   <div class="flex-1">
                     <header class="mb-2 flex-2">
                       <h2
@@ -237,9 +242,10 @@
                     <div
                       class="text-base line-clamp-2 font-extrabold text-slate-500 leading-snug"
                     >
-                      <h2 x-text="`$${product.price.toFixed(2)}`"></h2>
+                      <h2 x-text="$${product.price.toFixed(2)}"></h2>
                     </div>
                   </div>
+                  <!--Add to cart and favorites icon-->
                   <div class="flex mt-1 space-x-2">
                     <div class="justify-start flex-1">
                       <span
